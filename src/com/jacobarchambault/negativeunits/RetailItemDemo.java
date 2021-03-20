@@ -10,7 +10,6 @@ public class RetailItemDemo {
 
 	public static void main(String[] args) {
 		int units; // To hold the item units
-		double price; // To hold the item price
 		boolean goodInput; // Flag for validating input
 
 		// Create a Scanner object for keyboard input.
@@ -43,9 +42,8 @@ public class RetailItemDemo {
 		// Get the item price.
 		do {
 			System.out.print("Enter the item price:");
-			price = keyboard.nextDouble();
 			try {
-				item.setPrice(price);
+				item.setPrice(keyboard.nextDouble());
 				
 				// The next statement won't execute if price
 				// is negative because an exception will occur
