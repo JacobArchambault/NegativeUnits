@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class RetailItemDemo {
 
 	public static void main(String[] args) {
-		int units; // To hold the item units
 		boolean goodInput; // Flag for validating input
 
 		// Create a Scanner object for keyboard input.
@@ -26,9 +25,8 @@ public class RetailItemDemo {
 		// Get the item units.
 		do {
 			System.out.print("Enter the units on hand: ");
-			units = keyboard.nextInt();
 			try {
-				item.setUnitsOnHand(units);
+				item.setUnitsOnHand(keyboard.nextInt());
 
 				// The next statement won't execute if units is negative because an exception
 				// will occur.
