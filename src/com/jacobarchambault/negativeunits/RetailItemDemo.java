@@ -8,9 +8,8 @@ import java.util.Scanner;
  */
 public class RetailItemDemo {
 
-	public static void main(String[] args) {
-		boolean goodInput; // Flag for validating input
-
+	public static void main(
+			String[] args) {
 		// Create a Scanner object for keyboard input.
 		Scanner keyboard = new Scanner(
 				System.in);
@@ -19,22 +18,23 @@ public class RetailItemDemo {
 		RetailItem item = new RetailItem();
 
 		// Get the item description.
-		System.out.print("Enter the item description:");
-		item.setDescription(keyboard.nextLine());
+		System.out.print(
+				"Enter the item description:");
+		item.setDescription(
+				keyboard.nextLine());
 
 		// Get the item units.
 		getItemUnits(
 				keyboard,
 				item);
-		
+
 		// Get the item price.
 		getItemPrice(
 				keyboard,
 				item);
-		
+
 		// Display the info for item.
-		displayItemInfo(
-				item);
+		item.displayInfo();
 	}
 
 	private static void getItemUnits(
@@ -42,15 +42,18 @@ public class RetailItemDemo {
 			RetailItem item) {
 		boolean goodInput;
 		do {
-			System.out.print("Enter the units on hand: ");
+			System.out.print(
+					"Enter the units on hand: ");
 			try {
-				item.setUnitsOnHand(keyboard.nextInt());
+				item.setUnitsOnHand(
+						keyboard.nextInt());
 
 				// The next statement won't execute if units is negative because an exception
 				// will occur.
 				goodInput = true;
 			} catch (NegativeUnitsException e) {
-				System.out.println("Error: " + e.getMessage());
+				System.out.println(
+						"Error: " + e.getMessage());
 				goodInput = false;
 			}
 		} while (!goodInput);
@@ -61,26 +64,21 @@ public class RetailItemDemo {
 			RetailItem item) {
 		boolean goodInput;
 		do {
-			System.out.print("Enter the item price:");
+			System.out.print(
+					"Enter the item price:");
 			try {
-				item.setPrice(keyboard.nextDouble());
-				
+				item.setPrice(
+						keyboard.nextDouble());
+
 				// The next statement won't execute if price
 				// is negative because an exception will occur
 				goodInput = true;
-			} catch(NegativePriceException e) {
-				System.out.println("Error: " + e.getMessage());
+			} catch (NegativePriceException e) {
+				System.out.println(
+						"Error: " + e.getMessage());
 				goodInput = false;
 			}
 		} while (!goodInput);
-	}
-
-	private static void displayItemInfo(
-			RetailItem item) {
-		System.out.println("You entered:");
-		System.out.println("\tDescription: " + item.getDescription());
-		System.out.println("\tUnits on hand: " + item.getUnitsOnHand());
-		System.out.println("\tPrice: " + item.getPrice());
 	}
 
 }

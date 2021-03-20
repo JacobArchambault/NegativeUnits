@@ -97,4 +97,12 @@ public class RetailItem {
 	public double getPrice() {
 		return price;
 	}
+
+	void displayInfo() {
+		System.out.println("You entered:");
+		System.out.println("\tDescription: " + this.getDescription());
+		System.out.println("\tUnits on hand: " + this.getUnitsOnHand());
+		System.out.println("\tPrice: " + this.getPrice());
+	}
+
 }
