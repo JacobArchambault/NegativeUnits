@@ -24,12 +24,12 @@ public class RetailItemDemo {
 				keyboard.nextLine());
 
 		// Get the item units.
-		getItemUnits(
+		setItemUnits(
 				keyboard,
 				item);
 
 		// Get the item price.
-		getItemPrice(
+		setItemPrice(
 				keyboard,
 				item);
 
@@ -37,7 +37,7 @@ public class RetailItemDemo {
 		item.displayInfo();
 	}
 
-	private static void getItemUnits(
+	private static void setItemUnits(
 			Scanner keyboard,
 			RetailItem item) {
 		boolean goodInput;
@@ -59,7 +59,7 @@ public class RetailItemDemo {
 		} while (!goodInput);
 	}
 
-	private static void getItemPrice(
+	private static void setItemPrice(
 			Scanner keyboard,
 			RetailItem item) {
 		boolean goodInput;
