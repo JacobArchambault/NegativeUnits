@@ -25,12 +25,10 @@ public class RetailItemDemo {
 
 		// Get the item units.
 		setItemUnits(
-				keyboard,
 				item);
 
 		// Get the item price.
 		setItemPrice(
-				keyboard,
 				item);
 
 		// Display the info for item.
@@ -38,7 +36,6 @@ public class RetailItemDemo {
 	}
 
 	private static void setItemUnits(
-			Scanner keyboard,
 			RetailItem item) {
 		boolean goodInput;
 		do {
@@ -46,7 +43,8 @@ public class RetailItemDemo {
 					"Enter the units on hand: ");
 			try {
 				item.setUnitsOnHand(
-						keyboard.nextInt());
+						new Scanner(
+								System.in).nextInt());
 
 				// The next statement won't execute if units is negative because an exception
 				// will occur.
@@ -60,7 +58,6 @@ public class RetailItemDemo {
 	}
 
 	private static void setItemPrice(
-			Scanner keyboard,
 			RetailItem item) {
 		boolean goodInput;
 		do {
@@ -68,7 +65,8 @@ public class RetailItemDemo {
 					"Enter the item price:");
 			try {
 				item.setPrice(
-						keyboard.nextDouble());
+						new Scanner(
+								System.in).nextDouble());
 
 				// The next statement won't execute if price
 				// is negative because an exception will occur
@@ -80,5 +78,4 @@ public class RetailItemDemo {
 			}
 		} while (!goodInput);
 	}
-
 }
