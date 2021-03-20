@@ -23,6 +23,24 @@ public class RetailItemDemo {
 		item.setDescription(keyboard.nextLine());
 
 		// Get the item units.
+		getItemUnits(
+				keyboard,
+				item);
+		
+		// Get the item price.
+		getItemPrice(
+				keyboard,
+				item);
+		
+		// Display the info for item.
+		displayItemInfo(
+				item);
+	}
+
+	private static void getItemUnits(
+			Scanner keyboard,
+			RetailItem item) {
+		boolean goodInput;
 		do {
 			System.out.print("Enter the units on hand: ");
 			try {
@@ -36,8 +54,12 @@ public class RetailItemDemo {
 				goodInput = false;
 			}
 		} while (!goodInput);
-		
-		// Get the item price.
+	}
+
+	private static void getItemPrice(
+			Scanner keyboard,
+			RetailItem item) {
+		boolean goodInput;
 		do {
 			System.out.print("Enter the item price:");
 			try {
@@ -51,8 +73,10 @@ public class RetailItemDemo {
 				goodInput = false;
 			}
 		} while (!goodInput);
-		
-		// Display the info for item.
+	}
+
+	private static void displayItemInfo(
+			RetailItem item) {
 		System.out.println("You entered:");
 		System.out.println("\tDescription: " + item.getDescription());
 		System.out.println("\tUnits on hand: " + item.getUnitsOnHand());
