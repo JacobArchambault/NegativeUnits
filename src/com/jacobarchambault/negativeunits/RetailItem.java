@@ -80,15 +80,6 @@ public class RetailItem {
 			price = p;
 	}
 
-	/**
-	 * The getPrice method returns the item's price.
-	 * 
-	 * @return The item's price.
-	 */
-	public double getPrice() {
-		return price;
-	}
-
 	void displayInfo() {
 		System.out.println(
 				"You entered:");
@@ -97,7 +88,7 @@ public class RetailItem {
 		System.out.println(
 				"\tUnits on hand: " + this.unitsOnHand);
 		System.out.println(
-				"\tPrice: " + this.getPrice());
+				"\tPrice: " + this.price);
 	}
 
 	void setItemUnits() {
