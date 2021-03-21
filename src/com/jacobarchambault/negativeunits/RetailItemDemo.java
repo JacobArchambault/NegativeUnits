@@ -9,13 +9,29 @@ import java.util.Scanner;
 public class RetailItemDemo {
 
 	public static void main(
-			String[] args) {
+			final String[] args) {
 		// Create a RetailItem object.
-		RetailItem item = new RetailItem();
-		item.setDescription();
+		final var item = new RetailItem(
+				RetailItemDemo.setDescription(
+						"Enter the item description: "));
 		item.setItemUnits();
 		item.setItemPrice();
 		item.displayInfo();
+	}
+
+	/**
+	 * The setDescription method sets the item's description.
+	 *
+	 * @param d The item's description.
+	 * @return
+	 */
+	public static String setDescription(
+			final String toPrompt) {
+		// set the item description.
+		System.out.print(
+				toPrompt);
+		return new Scanner(
+				System.in).nextLine();
 	}
 
 }
