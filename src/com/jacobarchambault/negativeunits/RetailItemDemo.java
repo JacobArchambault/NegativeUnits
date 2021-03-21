@@ -24,58 +24,13 @@ public class RetailItemDemo {
 				keyboard.nextLine());
 
 		// Get the item units.
-		setItemUnits(
-				item);
+		item.setItemUnits();
 
 		// Get the item price.
-		setItemPrice(
-				item);
+		item.setItemPrice();
 
 		// Display the info for item.
 		item.displayInfo();
 	}
 
-	private static void setItemUnits(
-			RetailItem item) {
-		boolean goodInput;
-		do {
-			System.out.print(
-					"Enter the units on hand: ");
-			try {
-				item.setUnitsOnHand(
-						new Scanner(
-								System.in).nextInt());
-
-				// The next statement won't execute if units is negative because an exception
-				// will occur.
-				goodInput = true;
-			} catch (NegativeUnitsException e) {
-				System.out.println(
-						"Error: " + e.getMessage());
-				goodInput = false;
-			}
-		} while (!goodInput);
-	}
-
-	private static void setItemPrice(
-			RetailItem item) {
-		boolean goodInput;
-		do {
-			System.out.print(
-					"Enter the item price:");
-			try {
-				item.setPrice(
-						new Scanner(
-								System.in).nextDouble());
-
-				// The next statement won't execute if price
-				// is negative because an exception will occur
-				goodInput = true;
-			} catch (NegativePriceException e) {
-				System.out.println(
-						"Error: " + e.getMessage());
-				goodInput = false;
-			}
-		} while (!goodInput);
-	}
 }

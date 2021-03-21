@@ -1,5 +1,7 @@
 package com.jacobarchambault.negativeunits;
 
+import java.util.Scanner;
+
 /**
  * The RetailItem class stores data about a retail item for the RetailItem
  * Exceptions programming challenge.
@@ -41,7 +43,8 @@ public class RetailItem {
 	 * 
 	 * @param d The item's description.
 	 */
-	public void setDescription(String d) {
+	public void setDescription(
+			String d) {
 		description = d;
 	}
 
@@ -51,7 +54,8 @@ public class RetailItem {
 	 * @param u The number of units on hand
 	 * @exception NegativeUnitsException When units on hand is negative.
 	 */
-	public void setUnitsOnHand(int u) throws NegativeUnitsException {
+	public void setUnitsOnHand(
+			int u) throws NegativeUnitsException {
 		if (u < 0)
 			throw new NegativeUnitsException(
 					u);
@@ -65,7 +69,8 @@ public class RetailItem {
 	 * @param p The item's price.
 	 * @exception NegativePriceException When the price is negative.
 	 */
-	public void setPrice(double p) throws NegativePriceException {
+	public void setPrice(
+			double p) throws NegativePriceException {
 		if (p < 0)
 			throw new NegativePriceException(
 					p);
@@ -91,18 +96,66 @@ public class RetailItem {
 		return unitsOnHand;
 	}
 
-	/** The getPrice method returns the item's price.
-	 * @return The item's price. 
-	*/
+	/**
+	 * The getPrice method returns the item's price.
+	 * 
+	 * @return The item's price.
+	 */
 	public double getPrice() {
 		return price;
 	}
 
 	void displayInfo() {
-		System.out.println("You entered:");
-		System.out.println("\tDescription: " + this.getDescription());
-		System.out.println("\tUnits on hand: " + this.getUnitsOnHand());
-		System.out.println("\tPrice: " + this.getPrice());
+		System.out.println(
+				"You entered:");
+		System.out.println(
+				"\tDescription: " + this.getDescription());
+		System.out.println(
+				"\tUnits on hand: " + this.getUnitsOnHand());
+		System.out.println(
+				"\tPrice: " + this.getPrice());
+	}
+
+	void setItemUnits() {
+		boolean goodInput;
+		do {
+			System.out.print(
+					"Enter the units on hand: ");
+			try {
+				this.setUnitsOnHand(
+						new Scanner(
+								System.in).nextInt());
+
+				// The next statement won't execute if units is negative because an exception
+				// will occur.
+				goodInput = true;
+			} catch (NegativeUnitsException e) {
+				System.out.println(
+						"Error: " + e.getMessage());
+				goodInput = false;
+			}
+		} while (!goodInput);
+	}
+
+	void setItemPrice() {
+		boolean goodInput;
+		do {
+			System.out.print(
+					"Enter the item price:");
+			try {
+				this.setPrice(
+						new Scanner(
+								System.in).nextDouble());
+
+				// The next statement won't execute if price
+				// is negative because an exception will occur
+				goodInput = true;
+			} catch (NegativePriceException e) {
+				System.out.println(
+						"Error: " + e.getMessage());
+				goodInput = false;
+			}
+		} while (!goodInput);
 	}
 
 }
