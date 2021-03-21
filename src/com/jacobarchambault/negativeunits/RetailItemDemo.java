@@ -12,8 +12,10 @@ public class RetailItemDemo {
 			final String[] args) {
 		// Create a RetailItem object.
 		final var item = new RetailItem(
-				Prompt.response(
-						"Enter the item description: "));
+				new Prompt(
+						new Scanner(
+								System.in)).response(
+										"Enter the item description: "));
 		item.setItemUnits();
 		item.setItemPrice();
 		item.displayInfo();
