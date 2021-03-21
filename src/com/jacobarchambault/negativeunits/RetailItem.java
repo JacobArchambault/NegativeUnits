@@ -45,9 +45,11 @@ public class RetailItem {
 	 * 
 	 * @param d The item's description.
 	 */
-	public void setDescription(
-			String d) {
-		description = d;
+	public void setDescription() {
+		// set the item description.
+		System.out.print(
+				"Enter the item description:");
+		this.description = keyboard.nextLine();
 	}
 
 	/**
