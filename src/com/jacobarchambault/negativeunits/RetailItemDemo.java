@@ -18,7 +18,7 @@ public class RetailItemDemo {
 										"Enter the item description: "));
 		item.setItemUnits(
 				"Enter the units on hand: ");
-		item.set(
+		item.setItemPrice(
 				"Enter the item price:");
 		item.displayInfo();
 	}

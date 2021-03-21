@@ -79,7 +79,7 @@ public class RetailItem {
 				"\tPrice: " + price);
 	}
 
-	void set(String prompt) {
+	void setItemPrice(String prompt) {
 		boolean goodInput;
 		do {
 			System.out.print(prompt
