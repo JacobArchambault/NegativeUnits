@@ -99,11 +99,11 @@ public class RetailItem {
 		} while (!goodInput);
 	}
 
-	void setItemUnits() {
+	void setItemUnits(String prompt) {
 		boolean goodInput;
 		do {
 			System.out.print(
-					"Enter the units on hand: ");
+					prompt);
 			try {
 				setUnitsOnHand(
 						keyboard.nextInt());

@@ -16,7 +16,7 @@ public class RetailItemDemo {
 						new Scanner(
 								System.in)).response(
 										"Enter the item description: "));
-		item.setItemUnits();
+		item.setItemUnits("Enter the units on hand: ");
 		item.set("Enter the item price:");
 		item.displayInfo();
 	}
