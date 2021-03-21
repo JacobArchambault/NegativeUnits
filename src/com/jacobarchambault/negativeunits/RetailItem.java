@@ -81,24 +81,6 @@ public class RetailItem {
 	}
 
 	/**
-	 * The getDescription method returns the item's description.
-	 * 
-	 * @return The item's description.
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * The getUnitsOnHand method returns the item'snumber of units on hand.
-	 * 
-	 * @return The units on hand.
-	 */
-	public int getUnitsOnHand() {
-		return unitsOnHand;
-	}
-
-	/**
 	 * The getPrice method returns the item's price.
 	 * 
 	 * @return The item's price.
@@ -111,9 +93,9 @@ public class RetailItem {
 		System.out.println(
 				"You entered:");
 		System.out.println(
-				"\tDescription: " + this.getDescription());
+				"\tDescription: " + this.description);
 		System.out.println(
-				"\tUnits on hand: " + this.getUnitsOnHand());
+				"\tUnits on hand: " + this.unitsOnHand);
 		System.out.println(
 				"\tPrice: " + this.getPrice());
 	}
