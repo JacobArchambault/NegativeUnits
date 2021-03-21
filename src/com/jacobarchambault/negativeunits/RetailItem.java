@@ -56,7 +56,7 @@ public class RetailItem {
 	 * @param u The number of units on hand
 	 * @exception NegativeUnitsException When units on hand is negative.
 	 */
-	public void setUnitsOnHand(
+	private void setUnitsOnHand(
 			int u) throws NegativeUnitsException {
 		if (u < 0)
 			throw new NegativeUnitsException(
@@ -71,7 +71,7 @@ public class RetailItem {
 	 * @param p The item's price.
 	 * @exception NegativePriceException When the price is negative.
 	 */
-	public void setPrice(
+	private void setPrice(
 			double p) throws NegativePriceException {
 		if (p < 0)
 			throw new NegativePriceException(
