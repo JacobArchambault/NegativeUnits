@@ -79,11 +79,11 @@ public class RetailItem {
 				"\tPrice: " + price);
 	}
 
-	void setItemPrice() {
+	void set(String prompt) {
 		boolean goodInput;
 		do {
-			System.out.print(
-					"Enter the item price:");
+			System.out.print(prompt
+					);
 			try {
 				setPrice(
 						keyboard.nextDouble());
