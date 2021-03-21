@@ -10,6 +10,8 @@ public class RetailItem {
 	private String description; // Item description
 	private int unitsOnHand; // Number of units on hand
 	private double price; // Unit price
+	private Scanner keyboard = new Scanner(
+			System.in);
 
 	/**
 	 * This constructor initializes the item's description with an empty string,
@@ -123,8 +125,7 @@ public class RetailItem {
 					"Enter the units on hand: ");
 			try {
 				this.setUnitsOnHand(
-						new Scanner(
-								System.in).nextInt());
+						keyboard.nextInt());
 
 				// The next statement won't execute if units is negative because an exception
 				// will occur.
@@ -144,8 +145,7 @@ public class RetailItem {
 					"Enter the item price:");
 			try {
 				this.setPrice(
-						new Scanner(
-								System.in).nextDouble());
+						keyboard.nextDouble());
 
 				// The next statement won't execute if price
 				// is negative because an exception will occur
